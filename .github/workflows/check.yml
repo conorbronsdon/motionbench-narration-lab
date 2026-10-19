@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -13,7 +13,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright-core install --with-deps chromium
+      - run: npx playwright-core install chromium
       - run: npm test
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: python tools/generate.py --brief briefs/stat.json --out runs/dry-run

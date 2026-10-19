@@ -19,6 +19,8 @@ node tools/evaluate.mjs --html examples/stat.html --brief examples/stat.json --o
 
 The evaluator automatically finds Playwright Chromium on Windows, macOS, and Linux. Set `MOTION_CHROME` to an existing Chromium executable if needed. `PRODUCER_HEADLESS_SHELL_PATH` is also accepted. Set `FFMPEG` if ffmpeg is outside `PATH`. Browser and package installation require network access; evaluation runs with loopback-only browser requests. The optional render is silent video; it does not synthesize or align audio.
 
+CI runs the browser controls on Windows. Linux requires a working Chromium sandbox; distributions restricting unprivileged user namespaces may need an administrator-provided configuration. See [Chromium's AppArmor guidance](https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md). The evaluator keeps browser sandboxing enabled.
+
 Open `runs/example/contact-sheet.png` and `report.json`. With `--render`, the output also contains `wide.mp4`, `tall.mp4`, and their source PNG sequences. Outputs stay under the supplied directory and are ignored by Git. Rendering at production resolution can produce substantial files.
 
 Exit codes: `0` means the sampled automated checks passed; `1` means a measured failure; `2` means setup, input, or execution failed. A zero exit code still requires human visual and editorial review.
