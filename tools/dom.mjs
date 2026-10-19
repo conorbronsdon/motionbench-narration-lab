@@ -2,6 +2,17 @@
 export function observe({reads, safe}) {
   const norm = s => String(s).replace(/\s+/g, ' ').trim();
   const measure = document.createElement('canvas').getContext('2d');
+  const root = document.documentElement, rootStyle = getComputedStyle(root);
+  const body = [...root.children].find(el => el.localName === 'body' && el.namespaceURI === 'http://www.w3.org/1999/xhtml');
+  const bodyStyle = body && getComputedStyle(body);
+  // CSS Overflow 3 §3.1.4: the propagated element has used overflow visible;
+  // its computed overflow clips the viewport, not its (possibly empty) box.
+  // Any containment disables the special HTML body propagation (Contain 1 §2).
+  const bodyPropagates = root.localName === 'html' && root.namespaceURI === 'http://www.w3.org/1999/xhtml' &&
+    rootStyle.overflowX === 'visible' && rootStyle.overflowY === 'visible' &&
+    rootStyle.contain === 'none' && bodyStyle?.contain === 'none' && bodyStyle.display !== 'none';
+  const propagated = rootStyle.display === 'none' ? null : bodyPropagates ? body : root;
+  const viewport = {left:0, top:0, right:root.clientWidth, bottom:root.clientHeight};
   const alpha = color => {
     const match = color.match(/rgba?\(([^)]+)\)/);
     if (!match) return color === 'transparent' ? 0 : 1;
@@ -44,10 +55,16 @@ export function observe({reads, safe}) {
         if (cs.transform !== 'none') { const m = new DOMMatrix(cs.transform); scale *= Math.min(Math.hypot(m.a, m.b), Math.hypot(m.c, m.d)); }
         // Non-rectangular masks cannot be established with a text-range bound.
         if (cs.clipPath !== 'none' || (cs.maskImage && cs.maskImage !== 'none') || cs.clip !== 'auto' || cs.filter !== 'none') { visible = false; reasons.push('unsupported-mask-or-filter'); }
-        const clipX = /hidden|clip|auto|scroll/.test(cs.overflowX), clipY = /hidden|clip|auto|scroll/.test(cs.overflowY);
+        const viewportClip = parent === propagated;
+        const paintContainment = /(^|\s)(paint|strict|content)(\s|$)/.test(cs.contain);
+        const clipX = viewportClip || /hidden|clip|auto|scroll/.test(cs.overflowX), clipY = viewportClip || /hidden|clip|auto|scroll/.test(cs.overflowY);
         if (clipX || clipY) {
-          const b = parent.getBoundingClientRect();
+          const b = viewportClip ? viewport : parent.getBoundingClientRect();
           for (const r of glyphs) if ((clipX && (r.left < b.left - .5 || r.right > b.right + .5)) || (clipY && (r.top < b.top - .5 || r.bottom > b.bottom + .5))) { fits = false; reasons.push('ancestor-clip'); }
+        }
+        if (paintContainment) {
+          const b = parent.getBoundingClientRect();
+          for (const r of glyphs) if (r.left < b.left - .5 || r.right > b.right + .5 || r.top < b.top - .5 || r.bottom > b.bottom + .5) { fits = false; reasons.push('ancestor-clip'); }
         }
       }
       if (opacity * alpha(cs.color) < .95) { visible = false; reasons.push('opacity-or-color'); }

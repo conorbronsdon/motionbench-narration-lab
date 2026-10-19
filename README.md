@@ -84,6 +84,8 @@ The runner samples the complete frame grid and exact hold endpoints, then compar
 
 The adversarial tests include hidden exact text, clipped text, portrait-only overflow, an endpoint content regression, duplicate selectors, history-dependent rendering, and attempted network access. The clean reference must continue to pass while each corresponding mutation fails.
 
+Viewport-overflow controls also inspect screenshot ink: visible root/body propagation cases must pass while ordinary body, nested and containment clipping still fail. See the pilot's [checker revalidation](docs/pilot.md) for the defect these controls exposed.
+
 ## References and license
 
 - [MotionBench website](https://motionbench.sh/)
