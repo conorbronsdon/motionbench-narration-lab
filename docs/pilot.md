@@ -9,11 +9,13 @@ The [recorded results](../results/pilot.json) cover three supplied synthetic bri
 | `deepseek-v4.1-flash-fast`, CoralBricks, reasoning `none` | 0/6 | 2/6: diagram wide and copy wide | 84.814 s | $0.03380124, provider-reported `usage.cost` |
 | `claude-haiku-5-5`, thinking disabled, effort low | 0/6 | 1/6: diagram wide | 67.020 s | $0.0117625, estimated from actual tokens and listed rates |
 
-No candidate passed both formats. These are strict sampled text/layout checks, not MotionBench scores. This is one sample per brief/model with no statistical comparison, and the checker conservatively fails unsupported masks and filters. It cannot rank aesthetic quality. Human preference has not been collected. A separately authored offline reference passes both formats and supplies a positive control.
+No candidate passed both formats. These are strict sampled text/layout checks, not MotionBench scores. This is one sample per brief/model with no statistical comparison, and the checker conservatively fails unsupported masks and filters. It cannot rank aesthetic quality. Human preference has not been collected. A separately authored offline reference passes its own example brief in both formats and supplies a positive control; it uses a different safe rectangle and is not a passing entry in this comparison.
 
 The elapsed figures sum model request latency only. Local rendering, check time and human review are separate. Anthropic's estimate uses [$0.10/M input and $0.50/M output](https://platform.claude.com/docs/en/about-claude/pricing), no cache, at the time of the experiment. It is not an invoice. Earlier adaptive-Haiku calibration used the same output cap: two calls truncated and one statistic completed. Those three calibration attempts cost an estimated $0.0131542 and remain separate from the thinking-disabled comparison. They are not discarded successes or repair attempts.
 
 One CoralBricks diagram response included prose around a fenced complete HTML document. The single document was extracted without editing its code; that formatting failure is retained in the record. No candidate received a manual animation repair.
+
+The original [system prompt](../results/comparison-system.txt) is archived with the three briefs. The optional generation adapter's prompt was tightened after the pilot to spell out that entrances finish by the cue. It is a practical follow-on, not a byte-identical replay of the historical experiment.
 
 Observed failure classes:
 

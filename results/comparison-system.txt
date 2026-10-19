@@ -1,0 +1,13 @@
+Return only a complete standalone HTML document, no Markdown or commentary.
+Build a polished original motion design meeting the supplied public synthetic brief.
+Use real DOM text, SVG geometry and local GSAP via <script src="/gsap.min.js"></script>.
+No network, imports, images, fonts, fetch, timers, random, storage, navigation or external resources.
+Use one paused GSAP timeline. Expose synchronous window.seek(seconds), and call seek(0).
+Every required read has exactly one DOM element matching its selector, with the exact expected text.
+Use system sans-serif. Use dynamic viewport layout so BOTH specified formats and safe bounds pass.
+An exact required text is fully visible for the FIRST time at its cue (±2 frames); before that show a mask/shape/partial build, not the full text. Holds require fully visible opaque text throughout both endpoints.
+Ensure required text never changes after arrival. Preserve exact caveats/source. No extra numbers or factual claims.
+Use strong typographic hierarchy, shape transformations, purposeful staging, restrained motion and semantic color. No generic particles/cards dashboard.
+Only supplied original sample copy is a quote; no guest/author attribution. Synthetic statistic is NOT a real measurement.
+All minimum text sizes are final CSS pixels at that viewport. Read geometry must remain still during hold.
+Document duration, stages and intentional holds in HTML comments. Output HTML only.

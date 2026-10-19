@@ -2,7 +2,7 @@
 
 A runnable experiment for turning supplied narration cues into short HTML/GSAP motion graphics, then checking what the browser actually displays. It adds observable production constraints to experiments inspired by [MotionBench](https://github.com/Coral-Bricks-AI/motionbench): the correct number, its qualifier and source, cue timing, readable bounds, and a complete hold window across formats.
 
-This is an independent prototype. It is not an official MotionBench score, a replacement for its grader, or a claim about model rankings. All included facts and examples are synthetic. The checks do not establish aesthetic quality or editorial approval.
+This is an independent prototype. It is not an official MotionBench score, a replacement for its grader, or a claim about model rankings. All animation examples use synthetic content. The checks do not establish aesthetic quality or editorial approval. See the [small generation/repair pilot](docs/pilot.md) and [demo/workshop outline](docs/demo.md).
 
 ## Run the example
 
