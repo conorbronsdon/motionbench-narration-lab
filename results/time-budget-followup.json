@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "cohort": "time-budget-followup-only",
+  "prior_cohort": "corrected-trial",
+  "prior_record": "production-route.json",
+  "status": "finished",
+  "scope": [
+    "diagram",
+    "quote"
+  ],
+  "statistic_included": false,
+  "human_preference": "not_collected",
+  "configuration": {
+    "selected_model": "gpt-6.1-sol",
+    "resolved_model": null,
+    "route": "Codex CLI through authenticated ChatGPT subscription",
+    "reasoning_effort": "high",
+    "process_timeout_seconds": 600,
+    "requested_max_output_tokens": 10000,
+    "enforced_max_output_tokens": null,
+    "model_tools": [],
+    "repairs_allowed_per_initial": 1,
+    "settings_function_matches_prior_driver": true,
+    "model_evidence": "Explicit CLI selection; no resolved-model proof or verified pinned motion generator."
+  },
+  "confounds": [
+    "Additional separate trial after prior 180-second diagram/quote timeouts; never combine cohorts.",
+    "A larger time budget is the diagnostic variable; prior timeout causation is not established.",
+    "Exploratory production ROUTE; not an apples-to-apples model ranking.",
+    "Codex CLI orchestration and intrinsic context differ from direct API calls.",
+    "GPT high effort differs from Coral no reasoning and Haiku low effort.",
+    "10000 output tokens requested, not enforced by a supported CLI cap.",
+    "Selected CLI model is recorded; no per-response resolved-model proof or USD invoice.",
+    "Follow-up briefs were selected after earlier route timeouts. This is a separate cohort, not a pooled three-brief score.",
+    "CLI subprocess time includes startup/orchestration; API latency has a different measurement boundary."
+  ],
+  "provenance": {
+    "summary_sha256": "27341ff4dd1f77e28cc09710f80bb99ec7ebbf814e33bfc6ad34f63d024211a0",
+    "driver_sha256": "ae0fdd0f13debdce49ac7a5f69365848bc4d953256feeed4430ea10f33da5102",
+    "prior_driver_sha256": "6dbbb597481cad39103bfe935f7fe23f74a147172c7d99771034cc2e31c7d022",
+    "helper_sha256": "70a9fa7c5a52ccda121aa3f406b9001ba2ab0dca2b3c833fa5d1cf7ac6646c25",
+    "system_file_sha256": "decd31971bf1376b0a6d5d6d0bc17256a1bdc19e1b0a7406b3252138d7fca6e5",
+    "briefs": {
+      "diagram": {
+        "file_sha256": "39a466ac724814700ea7b8338040d41537a8097f4c173570c3b16c33bcf8c610",
+        "report_brief_sha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e"
+      },
+      "quote": {
+        "file_sha256": "bfb306b12be8e44b7939ff7ca92bf27c78503ea6b94306f9026df5b0eeab3cb9",
+        "report_brief_sha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624"
+      }
+    },
+    "evaluator": {
+      "head": "9b3eba43c0073271d035076c96bc114838e5db44",
+      "files": {
+        "tools/evaluate.mjs": "7aca209b7e55f16bb2955710bb6fa9698b06ee047104db590fcf0bd37e3ad1f4",
+        "tools/dom.mjs": "255838b3d02b23b98f32d055fa9f6a491d4865cf4318ca98b2c35f3502b51ad9",
+        "tools/contract.mjs": "127acfa5c184a27b0e70c15b618f6ed909411378b3a5537e9c6d5b836f540c61",
+        "tools/comparison.py": "0db27fd1b4de9712a53240fe75f24d75a7d9d36bcdb779e9cd98018b09c5759e"
+      }
+    }
+  },
+  "totals": {
+    "maximum_calls": 4,
+    "calls_started": 4,
+    "completed_html": 4,
+    "initial_formats": {
+      "passed": 2,
+      "evaluated": 4
+    },
+    "repaired_formats": {
+      "passed": 4,
+      "evaluated": 4
+    },
+    "elapsed_seconds": 554.305,
+    "latency_basis": "Sum of the four CLI subprocess wall times; excludes preflight, evaluation, rendering and human review.",
+    "usage": {"input_tokens":29892,"cached_input_tokens":10368,"cache_write_input_tokens":0,"output_tokens":26943,"reasoning_output_tokens":12335},
+    "usage_known_calls": 4,
+    "usd_invoice": null,
+    "usd_estimate": null,
+    "pricing_note": "Subscription route; no per-call USD evidence. Earlier timeout costs/usage remain unknown in the separate prior record."
+  },
+  "boundary_audit": {
+    "observed_tool_events": 0,
+    "temporary_auth_copy_removed": true,
+    "terminal_owned_process_count": 0
+  },
+  "attempts": [
+    {
+      "brief": "diagram",
+      "revision": "initial",
+      "ordinal": 1,
+      "status": "complete",
+      "elapsed_seconds": 225.341,
+      "usage": {"input_tokens":5392,"cached_input_tokens":3456,"cache_write_input_tokens":0,"output_tokens":9995,"reasoning_output_tokens":6214},
+      "receipt_sha256": "35da72e695a089a2efaf2326ca055de0324f1cd105f4870b27c26cba60784bbb",
+      "prompt_sha256": "b7d9d6475360267bfe4f2dd78f6e7bcab8136230129d95be4dc2b3b94d0d6ba3",
+      "html_sha256": "5f547f027f56aceef44961e853e3c0543ff71b10b64368ca64aa73de247d3055",
+      "final_answer_sha256": "5f547f027f56aceef44961e853e3c0543ff71b10b64368ca64aa73de247d3055",
+      "wrapper_extracted": false,
+      "report_sha256": "02a134ee6b95fb107a1a0390d29610add8433ada3db1cc10ba4a9fb9390ff4aa",
+      "blocked_requests": 0,
+      "format_results": [
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]}
+      ]
+    },
+    {
+      "brief": "diagram",
+      "revision": "repair",
+      "ordinal": 2,
+      "status": "complete",
+      "elapsed_seconds": 89.014,
+      "usage": {"input_tokens":9729,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":5277,"reasoning_output_tokens":1034},
+      "receipt_sha256": "805e72cf82c3f9d67de235cd62f09371fafe26b8d586f39b79e3f20809416296",
+      "prompt_sha256": "521d8ae9139dbc84a8593af1865dc70b1a20c1ac14a9e6a59e781dba2d6b628a",
+      "html_sha256": "1c6126473fa1c1698108bfe1de01f9160b0097a78014d4dc9738d7588d679707",
+      "final_answer_sha256": "1c6126473fa1c1698108bfe1de01f9160b0097a78014d4dc9738d7588d679707",
+      "wrapper_extracted": false,
+      "report_sha256": "3b6c942e19798f13539151ef0d2f375c21d0d47ef0a45d88a9527ec043b31423",
+      "blocked_requests": 0,
+      "format_results": [
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]}
+      ]
+    },
+    {
+      "brief": "quote",
+      "revision": "initial",
+      "ordinal": 3,
+      "status": "complete",
+      "elapsed_seconds": 167.904,
+      "usage": {"input_tokens":5323,"cached_input_tokens":3456,"cache_write_input_tokens":0,"output_tokens":7487,"reasoning_output_tokens":4142},
+      "receipt_sha256": "10477b8105bdd4f691c62e80d5e041a8f92ee1e04e62700039a9f1e7591d52b9",
+      "prompt_sha256": "75c9c47704dc9cde11f3af96e060129dfc626a0d496b93ff03490cc1f833e000",
+      "html_sha256": "0210f21d4fc5d917c81290356d5c98a532ac98d3f37fdfdc0f096c606b94f0bc",
+      "final_answer_sha256": "0210f21d4fc5d917c81290356d5c98a532ac98d3f37fdfdc0f096c606b94f0bc",
+      "wrapper_extracted": false,
+      "report_sha256": "c444ed843fc3980c98766ce4a1356c0adbcef8018b17540bca2d5c0dbe14a1a0",
+      "blocked_requests": 0,
+      "format_results": [
+        {"id":"wide","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"seek_differences":[],"errors":[]},
+        {"id":"tall","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"seek_differences":[],"errors":[]}
+      ]
+    },
+    {
+      "brief": "quote",
+      "revision": "repair",
+      "ordinal": 4,
+      "status": "complete",
+      "elapsed_seconds": 72.046,
+      "usage": {"input_tokens":9448,"cached_input_tokens":3456,"cache_write_input_tokens":0,"output_tokens":4184,"reasoning_output_tokens":945},
+      "receipt_sha256": "76a24ecc6082d5ace1c01d8c1c1d6cf5a335cda039e2c5c9908c62198d9611f3",
+      "prompt_sha256": "cb2814f1f068adebf188f86994e4beaab181e6e0d5289780ac0a485b9f4482e2",
+      "html_sha256": "240db61db7fda3925cb3995ccf507786c5574fe50f26e2b35596c57bf0b48919",
+      "final_answer_sha256": "240db61db7fda3925cb3995ccf507786c5574fe50f26e2b35596c57bf0b48919",
+      "wrapper_extracted": false,
+      "report_sha256": "13762f3cea59a44ef0ddb019726ed8a195e57880b03f5751e84b676efb0370c5",
+      "blocked_requests": 0,
+      "format_results": [
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"seek_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"seek_differences":[],"errors":[]}
+      ]
+    }
+  ],
+  "final_render_bindings": {
+    "diagram": {
+      "report_sha256": "717ee57268e1deb99f78ed2646e5fb0bf979b4a6154f9dd053a6e0749499c33b",
+      "html_sha256": "1c6126473fa1c1698108bfe1de01f9160b0097a78014d4dc9738d7588d679707",
+      "videos": {
+        "wide": {
+          "sha256": "7795f8df2028239cd920b0cf2f3495a60dc99e031e4d36b4a2439a4803c6fffc",
+          "viewport": [
+            1920,
+            1080
+          ]
+        },
+        "tall": {
+          "sha256": "9b6ef2fde503cab5e9bb67ea83f211ce167517cdb42ebd2d4ebf9c965c2f1e1d",
+          "viewport": [
+            1080,
+            1920
+          ]
+        }
+      }
+    },
+    "quote": {
+      "report_sha256": "25085aa7874dad520aee90318938897ef704cede9a551c0d56580b5c7325333c",
+      "html_sha256": "240db61db7fda3925cb3995ccf507786c5574fe50f26e2b35596c57bf0b48919",
+      "videos": {
+        "wide": {
+          "sha256": "b39cd9ef84d14c3313bad7bf9984cc4d51fe5a485eee4311646b4f91678f32f0",
+          "viewport": [
+            1920,
+            1080
+          ]
+        },
+        "tall": {
+          "sha256": "87b700890a4964e051bc7d9751affc37f32b98bed23cf3c5de057e18f8e4a447",
+          "viewport": [
+            1080,
+            1920
+          ]
+        }
+      }
+    }
+  }
+}

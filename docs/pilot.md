@@ -47,6 +47,21 @@ This route used the same supplied public system prompt, briefs, local assets, no
 
 The four CLI subprocesses totaled **585.875 s**, including both 180-second timeouts. That boundary includes CLI startup and orchestration, while the historical table measures API request latency. Evaluation, rendering and human review are separate. Only the two completed calls returned token usage; timeout usage is unknown. This subscription route supplied no per-call USD invoice or defensible USD estimate, so its cost fields remain null. The record preserves prompt, HTML, receipt, report and evaluator hashes, plus zero observed tool-call events; diagnostic error items are recorded separately.
 
+## Separate time-budget follow-up
+
+The [time-budget follow-up](../results/time-budget-followup.json) selected only the diagram and kinetic-copy briefs after their earlier route timeouts. Each call received a 600-second process deadline, retaining the configured `gpt-6.1-sol` route, high effort, supplied system prompt, briefs, asset allowance, zero model tools and one feedback response. Four calls completed, producing these results:
+
+| Brief | Initial | One feedback response |
+|---|---|---|
+| Diagram | 2/2 formats pass; 225.341 s | 2/2 formats pass; 89.014 s |
+| Kinetic sample copy | 0/2 formats pass; 167.904 s | 2/2 formats pass; 72.046 s |
+
+Within this two-brief cohort, initial results passed **2/4 formats** and feedback responses passed **4/4**. The diagram already passed before feedback. The initial copy retained unsupported masks on required text; its response removed those masks during the hold and passed both formats. Both final HTML files were rendered in landscape and portrait, with source, evaluation-report, render-report and video hashes retained in the record. Human preference and visual quality remain unmeasured.
+
+These calls totaled **554.305 s** of CLI process time; all four returned token usage, while per-call USD remains unavailable. The earlier 180-second attempts remain in the [prior cohort](../results/production-route.json), with their timeouts and unknown usage intact. The statistic belongs only to that earlier cohort and is excluded from these counts. No pooled three-brief success rate is reported.
+
+This follow-up generated new samples after selecting earlier failures. The copy initial completed in 167.904 s, below the earlier deadline, so a larger time budget alone does not establish why the earlier attempts failed or these samples completed. CLI/API context and latency boundaries, reasoning effort, the requested but unenforced output cap, unverified resolved-model identity, and the unverified motion-production pin remain the same confounds described above. These are exploratory route observations, not MotionBench scores or an equivalent-budget model ranking.
+
 For a blind review, render each final candidate with `--render`, write a manifest of `{route, brief, revision, evaluation}` records, then run:
 
 ```sh
