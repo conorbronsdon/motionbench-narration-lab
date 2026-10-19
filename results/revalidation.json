@@ -1,0 +1,460 @@
+{
+  "status": "Post-fix re-evaluation of unchanged saved HTML; original repair feedback is historical, not regenerated.",
+  "change": "Correct root/body overflow propagation to viewport; preserve genuine clipping.",
+  "issue": "https://github.com/conorbronsdon/motionbench-narration-lab/issues/1",
+  "domSha256": "255838b3d02b23b98f32d055fa9f6a491d4865cf4318ca98b2c35f3502b51ad9",
+  "evaluatorSha256": "7aca209b7e55f16bb2955710bb6fa9698b06ee047104db590fcf0bd37e3ad1f4",
+  "additionalModelCalls": 0,
+  "humanPreference": "not_collected",
+  "cases": [
+    {
+      "route": "coral",
+      "brief": "stat",
+      "revision": "initial",
+      "htmlSha256": "87c2a8aa4b829ceb153f6dd5cd29b1f2af5dba038f7ccdf1fbfdcac11c15f885",
+      "briefSha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+      "reportSha256": "ce4365dc89732095ec45813429e59c66414a01a07c41038b606d3760dd2b5033",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 375,
+          "previousFailureCount": 375,
+          "reasons": {
+            "ancestor-clip": 257,
+            "occluded-at-probe": 1,
+            "opacity-or-color": 36,
+            "safe-bounds": 121
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 575,
+          "previousFailureCount": 575,
+          "reasons": {
+            "ancestor-clip": 257,
+            "safe-bounds": 460,
+            "occluded-at-probe": 1,
+            "opacity-or-color": 36
+          },
+          "nondeterministic": [
+            2.96
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "stat",
+      "revision": "repair",
+      "htmlSha256": "ec9dd124fba2ec09b835aea46dd6ed8154dd42ed53b0f1f9f14b620c812e0725",
+      "briefSha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+      "reportSha256": "7f81fd67c5d93b5854f09b72e11d14d09b3434267b76ce5bcd78465fae817d1f",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 122,
+          "previousFailureCount": 122,
+          "reasons": {
+            "safe-bounds": 121
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 454,
+          "previousFailureCount": 454,
+          "reasons": {
+            "safe-bounds": 453
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "diagram",
+      "revision": "initial",
+      "htmlSha256": "a4a5b7a21e96ff75adb793bbc73dda47a09e2f8b07ebdd954dbf26ef2784e302",
+      "briefSha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+      "reportSha256": "fda14061cbad07a8a8a54691fe885170ef6aef40e2487ccf369ee85f20545b49",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 211,
+          "previousFailureCount": 211,
+          "reasons": {
+            "occluded-at-probe": 211
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 318,
+          "previousFailureCount": 318,
+          "reasons": {
+            "safe-bounds": 106,
+            "occluded-at-probe": 211
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "diagram",
+      "revision": "repair",
+      "htmlSha256": "7a7a4264c801a38dfe1a405798dca0efd404c11c287036ea2c7e86e978d10b6d",
+      "briefSha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+      "reportSha256": "0b7a7c239ee31b54357fd349b04581b4c9c2c2fa64b70db26362a922c9dc57ec",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": true,
+          "failureCount": 0,
+          "previousFailureCount": 0,
+          "reasons": {},
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 318,
+          "previousFailureCount": 318,
+          "reasons": {
+            "safe-bounds": 106,
+            "occluded-at-probe": 211
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "quote",
+      "revision": "initial",
+      "htmlSha256": "cd1e80d18c486e4c923b8cfd384a1c28dc479f1cfcb30b65dabc6430abe1ea28",
+      "briefSha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+      "reportSha256": "9ed54dc878335ef321efd48e71b8734468289f7b80d0e5dbea176fa685c639f5",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 143,
+          "previousFailureCount": 143,
+          "reasons": {
+            "unsupported-mask-or-filter": 136,
+            "opacity-or-color": 6
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 143,
+          "previousFailureCount": 143,
+          "reasons": {
+            "unsupported-mask-or-filter": 136,
+            "opacity-or-color": 6
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "quote",
+      "revision": "repair",
+      "htmlSha256": "a3de760649b9140f09281db735588c6533472b2cc544564112161d81d427bc27",
+      "briefSha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+      "reportSha256": "5d0984a244be66320f0427b9d20f0e3f9790e8758b860944372eebcd9f719cdc",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": true,
+          "failureCount": 0,
+          "previousFailureCount": 0,
+          "reasons": {},
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 137,
+          "previousFailureCount": 137,
+          "reasons": {
+            "ancestor-clip": 136,
+            "safe-bounds": 136
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "stat",
+      "revision": "initial",
+      "htmlSha256": "b2972228177a29cad61fd49ec803223e393eed0ee7bab552e684719126a161c5",
+      "briefSha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+      "reportSha256": "5dfaf92131c98649f086a54efc1cb4c0c371b6cdf22a056217bc3235784d21eb",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 172,
+          "previousFailureCount": 172,
+          "reasons": {
+            "unsupported-mask-or-filter": 121,
+            "ancestor-clip": 1,
+            "occluded-at-probe": 1,
+            "opacity-or-color": 50
+          },
+          "nondeterministic": [
+            2.96
+          ],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 359,
+          "previousFailureCount": 359,
+          "reasons": {
+            "unsupported-mask-or-filter": 121,
+            "ancestor-clip": 1,
+            "occluded-at-probe": 1,
+            "opacity-or-color": 50,
+            "safe-bounds": 211
+          },
+          "nondeterministic": [
+            2.96
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "stat",
+      "revision": "repair",
+      "htmlSha256": "0f317d4b1993cbe03a732812f07275aa4729d2dbe6b14a518c7d3cc642985a2c",
+      "briefSha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+      "reportSha256": "37ed24979e23fe8a50117b99642efd224c8f97693de5493875ebd4ae4526ad9d",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 50,
+          "previousFailureCount": 50,
+          "reasons": {
+            "opacity-or-color": 50
+          },
+          "nondeterministic": [
+            2.96
+          ],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 50,
+          "previousFailureCount": 50,
+          "reasons": {
+            "opacity-or-color": 50
+          },
+          "nondeterministic": [
+            2.96
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "diagram",
+      "revision": "initial",
+      "htmlSha256": "d80a604912530dfa898ba058f6c4311fb98559647e53c17281bb88b5632a8e87",
+      "briefSha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+      "reportSha256": "65149aa98fd6ff7f04cbeb04b194f601705d88f8d278dc496f98b27c175e086d",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 181,
+          "previousFailureCount": 181,
+          "reasons": {
+            "unsupported-mask-or-filter": 166,
+            "opacity-or-color": 14
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 378,
+          "previousFailureCount": 378,
+          "reasons": {
+            "unsupported-mask-or-filter": 166,
+            "opacity-or-color": 14,
+            "safe-bounds": 211
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "diagram",
+      "revision": "repair",
+      "htmlSha256": "8620d286ee169358f2044a1f643ba8a32a8e8103ce3bf9b6ac421e301b6258e1",
+      "briefSha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+      "reportSha256": "8553ec71999af922c4d602410deecebd3021a2ade40ef4746ff80bb595226002",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": true,
+          "failureCount": 0,
+          "previousFailureCount": 0,
+          "reasons": {},
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 211,
+          "previousFailureCount": 211,
+          "reasons": {
+            "safe-bounds": 211
+          },
+          "nondeterministic": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "quote",
+      "revision": "initial",
+      "htmlSha256": "dac2f45499cea968ce5204ed249f4573734682b783d6319cdeba8300479ba8d9",
+      "briefSha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+      "reportSha256": "577fbc9470482bf068b75a7026e400b50d4a75affcc41628897dfe3114cc9819",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 152,
+          "previousFailureCount": 152,
+          "reasons": {
+            "unsupported-mask-or-filter": 136,
+            "opacity-or-color": 15
+          },
+          "nondeterministic": [],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 273,
+          "previousFailureCount": 273,
+          "reasons": {
+            "unsupported-mask-or-filter": 136,
+            "safe-bounds": 272,
+            "opacity-or-color": 15
+          },
+          "nondeterministic": [
+            8,
+            5.36,
+            2.96,
+            0
+          ],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "quote",
+      "revision": "repair",
+      "htmlSha256": "dbd1ac3403489957e652cc13b04537137250924229c366a1901c1509efc8eb7d",
+      "briefSha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+      "reportSha256": "3c084718fa0136d1455df036f02e73303babc4abb29c09c58cf563c5870b824a",
+      "pass": false,
+      "formats": [
+        {
+          "id": "wide",
+          "pass": false,
+          "failureCount": 16,
+          "previousFailureCount": 16,
+          "reasons": {
+            "opacity-or-color": 15
+          },
+          "nondeterministic": [
+            0
+          ],
+          "errors": []
+        },
+        {
+          "id": "tall",
+          "pass": false,
+          "failureCount": 16,
+          "previousFailureCount": 16,
+          "reasons": {
+            "opacity-or-color": 15
+          },
+          "nondeterministic": [
+            8,
+            5.36,
+            2.96,
+            0
+          ],
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "initial": {
+      "passingFormats": 0,
+      "formats": 12
+    },
+    "repair": {
+      "passingFormats": 3,
+      "formats": 12
+    }
+  },
+  "date": "2026-10-19",
+  "codeCommit": "9afe3450ac05af5b7f06c78e43f657ff19c0976a",
+  "historicalEvidence": "pilot.json"
+}
