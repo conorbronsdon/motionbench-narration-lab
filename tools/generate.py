@@ -40,8 +40,9 @@ def read_limited(path, limit):
 def run(args):
     brief_text = read_limited(args.brief, 20000)
     brief = json.loads(brief_text)
-    if not isinstance(brief, dict) or not brief.get('reads') or not brief.get('formats'):
-        raise ValueError('Supply a brief containing reads and formats')
+    if (not isinstance(brief, dict) or not isinstance(brief.get('reads'), list)
+            or not brief['reads'] or not isinstance(brief.get('formats'), list) or not brief['formats']):
+        raise ValueError('Supply nonempty reads and formats arrays')
     prompt = 'Implement this public synthetic brief:\n' + brief_text
     if bool(args.repair_html) != bool(args.failures):
         raise ValueError('Repair requires both --repair-html and --failures')

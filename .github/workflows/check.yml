@@ -15,4 +15,5 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npx playwright-core install --with-deps chromium
       - run: npm test
+      - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: python tools/generate.py --brief briefs/stat.json --out runs/dry-run
