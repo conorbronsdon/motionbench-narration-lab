@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
+import {PNG} from 'pngjs';
 import {evaluate} from '../tools/evaluate.mjs';
 const brief={id:'browser-controls',duration:.3,fps:10,formats:[{id:'wide',width:600,height:400,safe:[20,20,580,380]},{id:'tall',width:400,height:600,safe:[20,20,380,580]}],reads:[{id:'value',selector:'#value',text:'42 requests',cue:.1,toleranceFrames:0,hold:[.1,.3],minFontPx:24,stable:true}]};
 const html=extra=>`<!doctype html><style>body{margin:0;background:#121725;color:white;font:30px Arial}#value{position:absolute;left:40px;top:80px} ${extra.css??''}</style><div id="value">42 requests</div>${extra.body??''}<script>window.seek=t=>{document.querySelector('#value').style.opacity=t<.1?0:1;${extra.seek??''}};${extra.script??''}</script>`;
@@ -23,4 +24,43 @@ test('browser adversarial controls', {timeout:120000}, async t=>{
   await t.test('a seek that never completes reaches the execution timeout',async()=>{await assert.rejects(run('timeout',{script:'window.seek=()=>new Promise(()=>{});'}),/exceeded 10 seconds/);});
   // Temporary outputs contain only synthetic fixtures and are safe to remove after all jobs stop.
   await fs.rm(temp,{recursive:true,force:true});
+});
+
+test('viewport overflow propagation matches painted text', {timeout:120000}, async t=>{
+  const temp=await fs.mkdtemp(path.join(os.tmpdir(),'motion-lab-overflow-'));
+  const cases=[
+    {id:'body-propagates',css:'body{height:30px;overflow:hidden}',painted:true},
+    {id:'root-propagates',css:'html{height:30px;overflow:hidden}',painted:true},
+    {id:'ordinary-body-clips',css:'html{overflow:hidden}body{position:relative;height:30px;overflow:hidden}',painted:false},
+    {id:'one-visible-root-axis-is-insufficient',css:'html{overflow-x:clip;overflow-y:visible}body{position:relative;height:30px;overflow:hidden}',painted:false},
+    {id:'root-layout-containment-disables-body-propagation',css:'html{contain:layout}body{position:relative;height:30px;overflow:hidden}',painted:false},
+    {id:'body-layout-containment-disables-body-propagation',css:'body{contain:layout;position:relative;height:30px;overflow:hidden}',painted:false},
+    {id:'root-paint-containment-still-clips',css:'html{contain:paint;height:30px;overflow:hidden}',painted:false},
+    {id:'body-paint-containment-still-clips',css:'body{contain:paint;position:relative;height:30px;overflow:hidden}',painted:false},
+    {id:'nested-clipping-survives-body-propagation',css:'body{overflow:hidden}.nested{position:relative;height:30px;overflow:hidden}',nested:true,painted:false},
+  ];
+  try {
+    for(const c of cases) await t.test(c.id,async()=>{
+      const content='<div id="value">42 requests</div>';
+      const markup=`<!doctype html><style>html{background:#121725}body{margin:0;background:#121725;color:white;font:30px Arial}#value{position:absolute;left:40px;top:80px}${c.css}</style>${c.nested?`<section class="nested">${content}</section>`:content}<script>window.seek=t=>{document.querySelector('#value').style.opacity=t<.1?0:1};seek(0)</script>`;
+      const input=path.join(temp,`${c.id}.html`),out=path.join(temp,c.id);
+      await fs.writeFile(input,markup);
+      const report=await evaluate({html:input,brief,out});
+      for(const format of report.formats){
+        const frame=format.screenshots.find(s=>s.t>=.1),png=PNG.sync.read(await fs.readFile(path.join(out,frame.file)));
+        let whitePixels=0;
+        for(let y=75;y<125;y++)for(let x=35;x<300;x++){
+          const i=(y*png.width+x)*4;
+          if(png.data[i]>230&&png.data[i+1]>230&&png.data[i+2]>230)whitePixels++;
+        }
+        // Actual screenshot ink independently establishes whether the fixture
+        // paints outside the short box; CSS geometry alone is not this oracle.
+        if(c.painted)assert.ok(whitePixels>200,`${format.id}: expected painted text, got ${whitePixels} bright pixels`);
+        else assert.equal(whitePixels,0,`${format.id}: expected text fully clipped`);
+        if(c.painted)assert.equal(format.failures.length,0,`${format.id}: painted read was rejected`);
+        else assert.ok(format.failures.some(f=>f.reasons?.includes('ancestor-clip')),`${format.id}: real clipping must fail`);
+      }
+      assert.equal(report.pass,c.painted);
+    });
+  }finally{await fs.rm(temp,{recursive:true,force:true});}
 });
