@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "classification": "Exploratory configured Codex production-route trial; not a model ranking or proof of a pinned motion-generation baseline.",
+  "status": "finished",
+  "human_preference": "not_collected",
+  "selected_model": "gpt-6.1-sol",
+  "resolved_model": null,
+  "model_evidence": "Explicit CLI selection only; no per-response resolved-model proof or established pinned motion generator.",
+  "route": "Codex CLI through authenticated ChatGPT subscription",
+  "reasoning_effort": "high",
+  "requested_max_output_tokens": 10000,
+  "enforced_max_output_tokens": null,
+  "repairs_allowed_per_completed_initial": 1,
+  "process_timeout_seconds": 180,
+  "confounds": [
+    "Exploratory production ROUTE; not an apples-to-apples model ranking.",
+    "Codex CLI orchestration and intrinsic context differ from direct API calls.",
+    "GPT high effort differs from Coral no reasoning and Haiku low effort.",
+    "10000 output tokens requested, not enforced by a supported CLI cap.",
+    "Selected CLI model is recorded; no per-response resolved-model proof or USD invoice.",
+    "CLI elapsed time includes orchestration/startup; historical API request latency has a different measurement boundary."
+  ],
+  "provenance": {
+    "trial_summary_sha256": "2575388770991c00cc9acf2c82659d7667d6c022ee6f0dd1f0632e414d0407c1",
+    "driver_sha256": "6dbbb597481cad39103bfe935f7fe23f74a147172c7d99771034cc2e31c7d022",
+    "helper_sha256": "70a9fa7c5a52ccda121aa3f406b9001ba2ab0dca2b3c833fa5d1cf7ac6646c25",
+    "evaluator": {
+      "head": "9eb584a077bd3e425c2307610bd9016be1c21219",
+      "files": {
+        "tools/evaluate.mjs": "7aca209b7e55f16bb2955710bb6fa9698b06ee047104db590fcf0bd37e3ad1f4",
+        "tools/dom.mjs": "255838b3d02b23b98f32d055fa9f6a491d4865cf4318ca98b2c35f3502b51ad9",
+        "tools/contract.mjs": "127acfa5c184a27b0e70c15b618f6ed909411378b3a5537e9c6d5b836f540c61",
+        "tools/comparison.py": "0db27fd1b4de9712a53240fe75f24d75a7d9d36bcdb779e9cd98018b09c5759e"
+      }
+    }
+  },
+  "coverage": {
+    "planned_briefs": 3,
+    "formats_per_brief": 2,
+    "maximum_model_calls": 6,
+    "model_calls_started": 4,
+    "completed_html_outputs": 2,
+    "initial_formats": {
+      "evaluated": 2,
+      "passed": 0
+    },
+    "repaired_formats": {
+      "evaluated": 2,
+      "passed": 2
+    },
+    "final_artifact_formats": {
+      "available": 2,
+      "planned": 6,
+      "unavailable": 4
+    },
+    "unavailable": [
+      {
+        "brief": "diagram",
+        "initial": "route_timeout",
+        "repair": "not_attempted_missing_initial",
+        "evaluated_formats": 0,
+        "text_check_failures": null
+      },
+      {
+        "brief": "quote",
+        "initial": "route_timeout",
+        "repair": "not_attempted_missing_initial",
+        "evaluated_formats": 0,
+        "text_check_failures": null
+      }
+    ],
+    "note": "Unavailable artifacts are workflow coverage gaps, not measured text-check failures. Only the statistic produced an initial and repair; no timeouts were retried."
+  },
+  "time_and_cost": {
+    "elapsed_seconds_all_started_calls": 585.875,
+    "basis": "Sum of CLI subprocess wall time, including the two timeout attempts; excludes offline preflight, evaluation, rendering and human review.",
+    "usage_known_calls": 2,
+    "usage_unknown_calls": 2,
+    "usage_totals_known_calls_only": {
+      "input_tokens": 14953,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 11151,
+      "reasoning_output_tokens": 5079
+    },
+    "usd_invoice": null,
+    "usd_estimate": null,
+    "pricing_note": "Subscription route. No per-call USD invoice or invented free-cost assumption; timed-out calls returned no usage."
+  },
+  "boundary_audit": {
+    "observed_tool_events": 0,
+    "diagnostic_error_items_are_not_tool_calls": true,
+    "temporary_auth_copy_removed": true,
+    "terminal_owned_process_count": 0
+  },
+  "cases": [
+    {
+      "brief": "stat",
+      "revision": "initial",
+      "ordinal": 1,
+      "status": "complete",
+      "receipt_sha256": "f2194e10f2beba238d9d568929ae295440a7287a87703d64acfb8a23dba57ae7",
+      "prompt_sha256": "5f199ca32be5295f8d48660624c2c8acf916b9ffd590e37185ea4c4819fddd2b",
+      "system_file_sha256": "decd31971bf1376b0a6d5d6d0bc17256a1bdc19e1b0a7406b3252138d7fca6e5",
+      "brief_file_sha256": "af891f4d6d8dbfd5f19cf27cd4ea53024f36a49e91511fe7f6e2c9b6e3d38486",
+      "selected_model": "gpt-6.1-sol",
+      "resolved_model": null,
+      "reasoning_effort": "high",
+      "elapsed_seconds": 170.958,
+      "timed_out": false,
+      "process_timeout_seconds": 180,
+      "usage": {
+        "input_tokens": 5444,
+        "cached_input_tokens": 3456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7676,
+        "reasoning_output_tokens": 4660
+      },
+      "usd_invoice": null,
+      "observed_tool_events": 0,
+      "diagnostic_item_count": 1,
+      "wrapper_extracted": false,
+      "final_answer_sha256": "75a96dd701d48c29092db6438e0d08fe65b3a264cece26654581e41c5c0094a1",
+      "html_sha256": "75a96dd701d48c29092db6438e0d08fe65b3a264cece26654581e41c5c0094a1",
+      "evaluation": {
+        "report_sha256": "9b1a1b09e5d3bd65a6f52604afbfd4181554f2b269dc87ed3ae67640fbf198ff",
+        "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+        "pass": false,
+        "blocked_request_count": 0,
+        "formats": [
+          {
+            "id": "wide",
+            "pass": false,
+            "failure_count": 364,
+            "nondeterministic_times": [],
+            "errors": [],
+            "reads": [
+              {
+                "id": "value",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 122,
+                "failure_kinds": {
+                  "cue": 1,
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "qualifier",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 121,
+                "failure_kinds": {
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "source",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 121,
+                "failure_kinds": {
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "disclosure",
+                "arrival": 0,
+                "hold_samples": 211,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              }
+            ]
+          },
+          {
+            "id": "tall",
+            "pass": false,
+            "failure_count": 364,
+            "nondeterministic_times": [],
+            "errors": [],
+            "reads": [
+              {
+                "id": "value",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 122,
+                "failure_kinds": {
+                  "cue": 1,
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "qualifier",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 121,
+                "failure_kinds": {
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "source",
+                "arrival": null,
+                "hold_samples": 121,
+                "failure_count": 121,
+                "failure_kinds": {
+                  "hold": 121
+                },
+                "reasons": [
+                  "unsupported-mask-or-filter"
+                ]
+              },
+              {
+                "id": "disclosure",
+                "arrival": 0,
+                "hold_samples": 211,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "brief": "stat",
+      "revision": "repair",
+      "ordinal": 2,
+      "status": "complete",
+      "receipt_sha256": "e00fbb0bbe7da1ac23f9dfa710f261de66665630eaea8a4fd449429435616f71",
+      "prompt_sha256": "a28cad6967185dc1bfbeb7787755e0f3f2a1f834564b2806678ee02c313ab30c",
+      "system_file_sha256": "decd31971bf1376b0a6d5d6d0bc17256a1bdc19e1b0a7406b3252138d7fca6e5",
+      "brief_file_sha256": "af891f4d6d8dbfd5f19cf27cd4ea53024f36a49e91511fe7f6e2c9b6e3d38486",
+      "selected_model": "gpt-6.1-sol",
+      "resolved_model": null,
+      "reasoning_effort": "high",
+      "elapsed_seconds": 54.869,
+      "timed_out": false,
+      "process_timeout_seconds": 180,
+      "usage": {
+        "input_tokens": 9509,
+        "cached_input_tokens": 3456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3475,
+        "reasoning_output_tokens": 419
+      },
+      "usd_invoice": null,
+      "observed_tool_events": 0,
+      "diagnostic_item_count": 1,
+      "wrapper_extracted": false,
+      "final_answer_sha256": "748be87f4776a443f76dc444e629ccd5e1a26431c82d31f8324abba89066c4e1",
+      "html_sha256": "748be87f4776a443f76dc444e629ccd5e1a26431c82d31f8324abba89066c4e1",
+      "evaluation": {
+        "report_sha256": "70dc8abadaae4c361cd3273dd23798738adfb06bffcd026890d612084da3c65f",
+        "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+        "pass": true,
+        "blocked_request_count": 0,
+        "formats": [
+          {
+            "id": "wide",
+            "pass": true,
+            "failure_count": 0,
+            "nondeterministic_times": [],
+            "errors": [],
+            "reads": [
+              {
+                "id": "value",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "qualifier",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "source",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "disclosure",
+                "arrival": 0,
+                "hold_samples": 211,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              }
+            ]
+          },
+          {
+            "id": "tall",
+            "pass": true,
+            "failure_count": 0,
+            "nondeterministic_times": [],
+            "errors": [],
+            "reads": [
+              {
+                "id": "value",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "qualifier",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "source",
+                "arrival": 2.5,
+                "hold_samples": 121,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              },
+              {
+                "id": "disclosure",
+                "arrival": 0,
+                "hold_samples": 211,
+                "failure_count": 0,
+                "failure_kinds": {},
+                "reasons": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "brief": "diagram",
+      "revision": "initial",
+      "ordinal": 3,
+      "status": "route_timeout",
+      "receipt_sha256": "3001dec2d9e1bccc7bd19d068bfce6a221ce460ee6b14428a0e868deee3a34e6",
+      "prompt_sha256": "b7d9d6475360267bfe4f2dd78f6e7bcab8136230129d95be4dc2b3b94d0d6ba3",
+      "system_file_sha256": "decd31971bf1376b0a6d5d6d0bc17256a1bdc19e1b0a7406b3252138d7fca6e5",
+      "brief_file_sha256": "39a466ac724814700ea7b8338040d41537a8097f4c173570c3b16c33bcf8c610",
+      "selected_model": "gpt-6.1-sol",
+      "resolved_model": null,
+      "reasoning_effort": "high",
+      "elapsed_seconds": 180.021,
+      "timed_out": true,
+      "process_timeout_seconds": 180,
+      "usage": null,
+      "usd_invoice": null,
+      "observed_tool_events": 0,
+      "diagnostic_item_count": 1,
+      "wrapper_extracted": null,
+      "final_answer_sha256": null,
+      "html_sha256": null,
+      "evaluation": null
+    },
+    {
+      "brief": "quote",
+      "revision": "initial",
+      "ordinal": 4,
+      "status": "route_timeout",
+      "receipt_sha256": "5b695645e5be19a89d4db12e5206ba928a28a34ccf586b46e4a736b3f2620328",
+      "prompt_sha256": "75c9c47704dc9cde11f3af96e060129dfc626a0d496b93ff03490cc1f833e000",
+      "system_file_sha256": "decd31971bf1376b0a6d5d6d0bc17256a1bdc19e1b0a7406b3252138d7fca6e5",
+      "brief_file_sha256": "bfb306b12be8e44b7939ff7ca92bf27c78503ea6b94306f9026df5b0eeab3cb9",
+      "selected_model": "gpt-6.1-sol",
+      "resolved_model": null,
+      "reasoning_effort": "high",
+      "elapsed_seconds": 180.027,
+      "timed_out": true,
+      "process_timeout_seconds": 180,
+      "usage": null,
+      "usd_invoice": null,
+      "observed_tool_events": 0,
+      "diagnostic_item_count": 1,
+      "wrapper_extracted": null,
+      "final_answer_sha256": null,
+      "html_sha256": null,
+      "evaluation": null
+    }
+  ]
+}
