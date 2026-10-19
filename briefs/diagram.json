@@ -1,0 +1,69 @@
+{
+  "id": "diagram",
+  "duration": 8,
+  "fps": 30,
+  "formats": [
+    {
+      "id": "wide",
+      "width": 1920,
+      "height": 1080,
+      "safe": [
+        96,
+        54,
+        1824,
+        1026
+      ]
+    },
+    {
+      "id": "tall",
+      "width": 1080,
+      "height": 1920,
+      "safe": [
+        70,
+        270,
+        930,
+        1250
+      ]
+    }
+  ],
+  "design": "Illustrative two-stage process: a sheet builds at 1 second as Draft, then a matching review station emerges at 3 seconds; the sheet folds into a check shape. Only two semantic labels, no UI chrome. Connector must attach at node edges, never cross them or glow. Warm white background, dark text, one blue emphasis. Reflow vertical rather than crop. Human must inspect diagram semantics.",
+  "reads": [
+    {
+      "id": "draft",
+      "selector": "[data-read=\"draft\"]",
+      "text": "Draft",
+      "hold": [
+        1,
+        6.5
+      ],
+      "minFontPx": 64,
+      "stable": true,
+      "cue": 1,
+      "toleranceFrames": 2
+    },
+    {
+      "id": "review",
+      "selector": "[data-read=\"review\"]",
+      "text": "Review",
+      "hold": [
+        3,
+        6.5
+      ],
+      "minFontPx": 64,
+      "stable": true,
+      "cue": 3,
+      "toleranceFrames": 2
+    },
+    {
+      "id": "disclosure",
+      "selector": "[data-read=\"disclosure\"]",
+      "text": "ILLUSTRATIVE PROCESS",
+      "hold": [
+        0,
+        7
+      ],
+      "minFontPx": 32,
+      "stable": true
+    }
+  ]
+}

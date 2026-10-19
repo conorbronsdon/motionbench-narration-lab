@@ -1,0 +1,12 @@
+{
+  "id": "synthetic-stat", "duration": 8, "fps": 30,
+  "formats": [
+    {"id": "wide", "width": 1920, "height": 1080, "safe": [96,54,1824,1026]},
+    {"id": "tall", "width": 1080, "height": 1920, "safe": [70,270,1010,1650]}
+  ],
+  "reads": [
+    {"id":"value","selector":"[data-read=value]","text":"1,284","cue":2.5,"toleranceFrames":2,"hold":[2.5,6.5],"minFontPx":80,"stable":true},
+    {"id":"qualifier","selector":"[data-read=qualifier]","text":"requests in the test run","hold":[2.5,6.5],"minFontPx":32,"stable":true},
+    {"id":"source","selector":"[data-read=source]","text":"Source: synthetic fixture","hold":[2.5,6.5],"minFontPx":24,"stable":true}
+  ]
+}

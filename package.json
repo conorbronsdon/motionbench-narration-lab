@@ -1,0 +1,11 @@
+{
+  "name": "motionbench-narration-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A public synthetic narration-to-motion experiment and observable text checks.",
+  "scripts": {"test": "node --test tests/*.test.mjs", "example": "node tools/evaluate.mjs --html examples/stat.html --brief examples/stat.json --out runs/example"},
+  "dependencies": {"gsap": "3.15.0", "playwright-core": "1.63.0", "pngjs": "7.0.0"},
+  "engines": {"node": ">=22"},
+  "license": "MIT"
+}

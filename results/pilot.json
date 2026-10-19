@@ -1,0 +1,1031 @@
+{
+  "date": "2026-10-19",
+  "status": "exploratory n=1 per brief per model; not MotionBench scoring",
+  "human_preference": "not_collected",
+  "output_token_limit": 10000,
+  "repairs_allowed": 1,
+  "model_tools": [],
+  "main_configuration": "DeepSeek reasoning_effort none; Haiku thinking disabled, effort low. Same system prompt and synthetic briefs. Model-specific repair reports.",
+  "calibration": "Earlier adaptive Haiku had two max_tokens failures and one completed stat; preserved locally and excluded from the separately labelled thinking-disabled comparison. A fenced Coral diagram was extracted without modifying code.",
+  "haiku_pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "cases": [
+    {
+      "route": "coral",
+      "brief": "stat",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "87c2a8aa4b829ceb153f6dd5cd29b1f2af5dba038f7ccdf1fbfdcac11c15f885",
+          "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+          "generation_seconds": 11.869,
+          "usd": "0.00491097",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 375,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 122,
+                  "reasons": [
+                    "ancestor-clip",
+                    "occluded-at-probe"
+                  ]
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "ancestor-clip",
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "ancestor-clip",
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0.36666666666666664,
+                  "hold_samples": 211,
+                  "failure_count": 11,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 575,
+              "nondeterministic_times": [
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 122,
+                  "reasons": [
+                    "ancestor-clip",
+                    "occluded-at-probe",
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "ancestor-clip",
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "ancestor-clip",
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "ec9dd124fba2ec09b835aea46dd6ed8154dd42ed53b0f1f9f14b620c812e0725",
+          "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+          "generation_seconds": 12.792,
+          "usd": "0.00549021",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": true,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 122,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": 2.4,
+                  "hold_samples": 121,
+                  "failure_count": 1,
+                  "reasons": []
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": 2.4,
+                  "hold_samples": 121,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "source",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0,
+                  "hold_samples": 211,
+                  "failure_count": 0,
+                  "reasons": []
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 454,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": 2.4,
+                  "hold_samples": 121,
+                  "failure_count": 1,
+                  "reasons": []
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 121,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "diagram",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "a4a5b7a21e96ff75adb793bbc73dda47a09e2f8b07ebdd954dbf26ef2784e302",
+          "brief_sha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+          "generation_seconds": 12.484,
+          "usd": "0.00548865",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": true,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 211,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "occluded-at-probe"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 318,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": null,
+                  "hold_samples": 106,
+                  "failure_count": 107,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "occluded-at-probe"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "7a7a4264c801a38dfe1a405798dca0efd404c11c287036ea2c7e86e978d10b6d",
+          "brief_sha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+          "generation_seconds": 11.229,
+          "usd": "0.00546111",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": true,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 0,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0,
+                  "hold_samples": 211,
+                  "failure_count": 0,
+                  "reasons": []
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 318,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": null,
+                  "hold_samples": 106,
+                  "failure_count": 107,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "occluded-at-probe"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "coral",
+      "brief": "quote",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "cd1e80d18c486e4c923b8cfd384a1c28dc479f1cfcb30b65dabc6430abe1ea28",
+          "brief_sha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+          "generation_seconds": 20.904,
+          "usd": "0.00629301",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 143,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 137,
+                  "reasons": [
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 2.7,
+                  "hold_samples": 136,
+                  "failure_count": 6,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 143,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 137,
+                  "reasons": [
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 2.7,
+                  "hold_samples": 136,
+                  "failure_count": 6,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "deepseek-v4.1-flash-fast",
+          "html_sha256": "a3de760649b9140f09281db735588c6533472b2cc544564112161d81d427bc27",
+          "brief_sha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+          "generation_seconds": 15.536,
+          "usd": "0.00615729",
+          "cost_basis": "provider usage.cost",
+          "response_stop": "stop",
+          "wrapper_extracted": true,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 0,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": 2.5,
+                  "hold_samples": 136,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "source",
+                  "arrival": 2.433333333333333,
+                  "hold_samples": 136,
+                  "failure_count": 0,
+                  "reasons": []
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 137,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 137,
+                  "reasons": [
+                    "ancestor-clip",
+                    "safe-bounds"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 2.433333333333333,
+                  "hold_samples": 136,
+                  "failure_count": 0,
+                  "reasons": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "stat",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "b2972228177a29cad61fd49ec803223e393eed0ee7bab552e684719126a161c5",
+          "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+          "generation_seconds": 13.798,
+          "usd": "0.0019704",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 172,
+              "nondeterministic_times": [
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 122,
+                  "reasons": [
+                    "ancestor-clip",
+                    "occluded-at-probe",
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": 2.8333333333333335,
+                  "hold_samples": 121,
+                  "failure_count": 10,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 3.033333333333333,
+                  "hold_samples": 121,
+                  "failure_count": 16,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0.8,
+                  "hold_samples": 211,
+                  "failure_count": 24,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 359,
+              "nondeterministic_times": [
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": null,
+                  "hold_samples": 121,
+                  "failure_count": 122,
+                  "reasons": [
+                    "ancestor-clip",
+                    "occluded-at-probe",
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": 2.8333333333333335,
+                  "hold_samples": 121,
+                  "failure_count": 10,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 3.033333333333333,
+                  "hold_samples": 121,
+                  "failure_count": 16,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "0f317d4b1993cbe03a732812f07275aa4729d2dbe6b14a518c7d3cc642985a2c",
+          "brief_sha256": "46881d32fb54b3db5d971465fc8247c4a8a8a21a428a881054bd4cae6dbabe89",
+          "generation_seconds": 11.487,
+          "usd": "0.0024298",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 50,
+              "nondeterministic_times": [
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": 2.5,
+                  "hold_samples": 121,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": 2.8333333333333335,
+                  "hold_samples": 121,
+                  "failure_count": 10,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 3.033333333333333,
+                  "hold_samples": 121,
+                  "failure_count": 16,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0.8,
+                  "hold_samples": 211,
+                  "failure_count": 24,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 50,
+              "nondeterministic_times": [
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "value",
+                  "arrival": 2.5,
+                  "hold_samples": 121,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "qualifier",
+                  "arrival": 2.8333333333333335,
+                  "hold_samples": 121,
+                  "failure_count": 10,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 3.033333333333333,
+                  "hold_samples": 121,
+                  "failure_count": 16,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0.8,
+                  "hold_samples": 211,
+                  "failure_count": 24,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "diagram",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "d80a604912530dfa898ba058f6c4311fb98559647e53c17281bb88b5632a8e87",
+          "brief_sha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+          "generation_seconds": 11.448,
+          "usd": "0.0015504",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 181,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": null,
+                  "hold_samples": 166,
+                  "failure_count": 167,
+                  "reasons": [
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0.4666666666666667,
+                  "hold_samples": 211,
+                  "failure_count": 14,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 378,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": null,
+                  "hold_samples": 166,
+                  "failure_count": 167,
+                  "reasons": [
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "8620d286ee169358f2044a1f643ba8a32a8e8103ce3bf9b6ac421e301b6258e1",
+          "brief_sha256": "eeea2cd129c09242366c3984b5a024c28a7c8054b831a98797ea456d310be02e",
+          "generation_seconds": 7.761,
+          "usd": "0.0018535",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 0,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": 0,
+                  "hold_samples": 211,
+                  "failure_count": 0,
+                  "reasons": []
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 211,
+              "nondeterministic_times": [],
+              "reads": [
+                {
+                  "id": "draft",
+                  "arrival": 1,
+                  "hold_samples": 166,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "review",
+                  "arrival": 3,
+                  "hold_samples": 106,
+                  "failure_count": 0,
+                  "reasons": []
+                },
+                {
+                  "id": "disclosure",
+                  "arrival": null,
+                  "hold_samples": 211,
+                  "failure_count": 211,
+                  "reasons": [
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "haiku-direct",
+      "brief": "quote",
+      "attempts": [
+        {
+          "revision": "initial",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "dac2f45499cea968ce5204ed249f4573734682b783d6319cdeba8300479ba8d9",
+          "brief_sha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+          "generation_seconds": 12.55,
+          "usd": "0.0017456",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 152,
+              "nondeterministic_times": [
+                8,
+                5.36,
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 137,
+                  "reasons": [
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": 3,
+                  "hold_samples": 136,
+                  "failure_count": 15,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 273,
+              "nondeterministic_times": [
+                8,
+                5.36,
+                2.96,
+                0
+              ],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 137,
+                  "reasons": [
+                    "safe-bounds",
+                    "unsupported-mask-or-filter"
+                  ]
+                },
+                {
+                  "id": "source",
+                  "arrival": null,
+                  "hold_samples": 136,
+                  "failure_count": 136,
+                  "reasons": [
+                    "opacity-or-color",
+                    "safe-bounds"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "revision": "repair",
+          "provider_model": "claude-haiku-5-5",
+          "html_sha256": "dbd1ac3403489957e652cc13b04537137250924229c366a1901c1509efc8eb7d",
+          "brief_sha256": "123f7b7a313f0ec963158342769fa5e8696624c744946dbca9312cc7fd233624",
+          "generation_seconds": 9.976,
+          "usd": "0.0022128",
+          "cost_basis": "estimated from actual token usage at listed input/output rates; no cache",
+          "response_stop": "end_turn",
+          "wrapper_extracted": false,
+          "pass": false,
+          "formats": [
+            {
+              "id": "wide",
+              "failures": 16,
+              "nondeterministic_times": [
+                8,
+                5.36,
+                2.96
+              ],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": 1.7333333333333334,
+                  "hold_samples": 136,
+                  "failure_count": 1,
+                  "reasons": []
+                },
+                {
+                  "id": "source",
+                  "arrival": 3,
+                  "hold_samples": 136,
+                  "failure_count": 15,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tall",
+              "failures": 16,
+              "nondeterministic_times": [
+                8,
+                5.36,
+                2.96,
+                0
+              ],
+              "reads": [
+                {
+                  "id": "quote",
+                  "arrival": 1.7333333333333334,
+                  "hold_samples": 136,
+                  "failure_count": 1,
+                  "reasons": []
+                },
+                {
+                  "id": "source",
+                  "arrival": 3,
+                  "hold_samples": 136,
+                  "failure_count": 15,
+                  "reasons": [
+                    "opacity-or-color"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

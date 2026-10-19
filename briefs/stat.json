@@ -1,0 +1,78 @@
+{
+  "id": "stat",
+  "duration": 8,
+  "fps": 30,
+  "formats": [
+    {
+      "id": "wide",
+      "width": 1920,
+      "height": 1080,
+      "safe": [
+        96,
+        54,
+        1824,
+        1026
+      ]
+    },
+    {
+      "id": "tall",
+      "width": 1080,
+      "height": 1920,
+      "safe": [
+        70,
+        270,
+        930,
+        1250
+      ]
+    }
+  ],
+  "design": "Synthetic non-hook stat insert. A geometric gauge builds, then reveals the full final number at 2.5 seconds. Do not count through invented numbers. Use warm white background, dark text, one blue emphasis; source and qualifier part of the composition, not tiny footnotes. No logos. Label as synthetic for its full duration.",
+  "reads": [
+    {
+      "id": "value",
+      "selector": "[data-read=\"value\"]",
+      "text": "1,284",
+      "hold": [
+        2.5,
+        6.5
+      ],
+      "minFontPx": 120,
+      "stable": true,
+      "cue": 2.5,
+      "toleranceFrames": 2
+    },
+    {
+      "id": "qualifier",
+      "selector": "[data-read=\"qualifier\"]",
+      "text": "requests in the test run",
+      "hold": [
+        2.5,
+        6.5
+      ],
+      "minFontPx": 40,
+      "stable": true
+    },
+    {
+      "id": "source",
+      "selector": "[data-read=\"source\"]",
+      "text": "Source: synthetic fixture",
+      "hold": [
+        2.5,
+        6.5
+      ],
+      "minFontPx": 36,
+      "stable": true
+    },
+    {
+      "id": "disclosure",
+      "selector": "[data-read=\"disclosure\"]",
+      "text": "SYNTHETIC EXAMPLE",
+      "hold": [
+        0,
+        7
+      ],
+      "minFontPx": 32,
+      "stable": true
+    }
+  ]
+}

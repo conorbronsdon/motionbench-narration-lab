@@ -1,0 +1,56 @@
+{
+  "id": "quote",
+  "duration": 8,
+  "fps": 30,
+  "formats": [
+    {
+      "id": "wide",
+      "width": 1920,
+      "height": 1080,
+      "safe": [
+        96,
+        54,
+        1824,
+        1026
+      ]
+    },
+    {
+      "id": "tall",
+      "width": 1080,
+      "height": 1920,
+      "safe": [
+        70,
+        270,
+        930,
+        1250
+      ]
+    }
+  ],
+  "design": "Original sample sentence, not anyone?s words: A useful demo survives the revision. Kinetic type begins as fragmented words, then resolves into complete sentence at 2.5 seconds; a revision caret morphs into an underline. Full sentence stays still and readable through 7 seconds; restrained geometry may move. Warm white background, dark text, one blue emphasis. Use expressive asymmetric hierarchy, no attribution to a real person.",
+  "reads": [
+    {
+      "id": "quote",
+      "selector": "[data-read=\"quote\"]",
+      "text": "A useful demo survives the revision.",
+      "hold": [
+        2.5,
+        7
+      ],
+      "minFontPx": 72,
+      "stable": true,
+      "cue": 2.5,
+      "toleranceFrames": 2
+    },
+    {
+      "id": "source",
+      "selector": "[data-read=\"source\"]",
+      "text": "Original sample copy",
+      "hold": [
+        2.5,
+        7
+      ],
+      "minFontPx": 36,
+      "stable": true
+    }
+  ]
+}

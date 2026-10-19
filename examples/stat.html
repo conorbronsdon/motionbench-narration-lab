@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Synthetic narrated statistic</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#10172a;color:#f5f7fb;font-family:Arial,sans-serif;overflow:hidden}
+main{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100vw;height:100vh;gap:2vh}
+.eyebrow{font-size:clamp(28px,3vw,56px);letter-spacing:.16em;color:#83c8ff}
+[data-read=value]{font-size:clamp(130px,15vw,280px);font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+[data-read=qualifier]{font-size:clamp(36px,3vw,58px);text-align:center;max-width:80vw}
+[data-read=source]{font-size:clamp(28px,2vw,36px);color:#bfcae0;margin-top:5vh}
+.rail{position:absolute;left:10vw;right:10vw;top:22vh;height:8px;background:#254464;transform-origin:left}.fill{height:100%;background:#83c8ff;transform-origin:left}
+@media(max-aspect-ratio:1/1){main{gap:3vh}.rail{top:27vh}[data-read=value]{font-size:180px}[data-read=qualifier]{font-size:42px}[data-read=source]{font-size:32px}}
+</style><main><div class="rail"><div class="fill"></div></div><div class="eyebrow">TEST RUN</div><div data-read="value">0</div><div data-read="qualifier">requests in the test run</div><div data-read="source">Source: synthetic fixture</div></main>
+<script src="/gsap.min.js"></script><script>
+const value=document.querySelector('[data-read=value]');
+const tl=gsap.timeline({paused:true}).fromTo('.rail',{scaleX:0},{scaleX:1,duration:.8,ease:'power3.out'},0).fromTo('.eyebrow',{opacity:0,y:20},{opacity:1,y:0,duration:.5},.4).fromTo('[data-read=qualifier], [data-read=source]',{opacity:0},{opacity:1,duration:.4},1.2);
+window.seek=t=>{tl.totalTime(t,false);const p=Math.max(0,Math.min(1,(t-.5)/2));value.textContent=Math.floor(1284*p).toLocaleString('en-US');gsap.set('.fill',{scaleX:p});};seek(0);
+</script></html>
