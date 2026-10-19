@@ -102,8 +102,8 @@
       "report_sha256": "02a134ee6b95fb107a1a0390d29610add8433ada3db1cc10ba4a9fb9390ff4aa",
       "blocked_requests": 0,
       "format_results": [
-        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]},
-        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]}
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"nondeterministic_times":[],"hash_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"nondeterministic_times":[],"hash_differences":[],"errors":[]}
       ]
     },
     {
@@ -121,8 +121,8 @@
       "report_sha256": "3b6c942e19798f13539151ef0d2f375c21d0d47ef0a45d88a9527ec043b31423",
       "blocked_requests": 0,
       "format_results": [
-        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]},
-        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"seek_differences":[],"errors":[]}
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"nondeterministic_times":[],"hash_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"draft":1,"review":3,"disclosure":0},"hold_samples":483,"nondeterministic_times":[],"hash_differences":[],"errors":[]}
       ]
     },
     {
@@ -140,8 +140,8 @@
       "report_sha256": "c444ed843fc3980c98766ce4a1356c0adbcef8018b17540bca2d5c0dbe14a1a0",
       "blocked_requests": 0,
       "format_results": [
-        {"id":"wide","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"seek_differences":[],"errors":[]},
-        {"id":"tall","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"seek_differences":[],"errors":[]}
+        {"id":"wide","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"nondeterministic_times":[],"hash_differences":[{"t":0,"beforeSha256":"c19d8d4db356c9d16e812fade0a4a31511f6884aa2902d57f6e9ba75c915e2d7","afterSha256":"3e17d67393b2076213537c57295e8b95da6662026f8f955acdee5b7a8bbc5791","changedPixels":61,"significantPixels":0,"maxChannelDelta":1}],"errors":[]},
+        {"id":"tall","pass":false,"failures":273,"failure_kinds":{"cue":1,"hold":272},"reasons":{"unsupported-mask-or-filter":272},"arrivals":{"quote":null,"source":null},"hold_samples":272,"nondeterministic_times":[],"hash_differences":[],"errors":[]}
       ]
     },
     {
@@ -159,8 +159,8 @@
       "report_sha256": "13762f3cea59a44ef0ddb019726ed8a195e57880b03f5751e84b676efb0370c5",
       "blocked_requests": 0,
       "format_results": [
-        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"seek_differences":[],"errors":[]},
-        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"seek_differences":[],"errors":[]}
+        {"id":"wide","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"nondeterministic_times":[],"hash_differences":[],"errors":[]},
+        {"id":"tall","pass":true,"failures":0,"failure_kinds":{},"reasons":{},"arrivals":{"quote":2.5,"source":0},"hold_samples":272,"nondeterministic_times":[],"hash_differences":[],"errors":[]}
       ]
     }
   ],
