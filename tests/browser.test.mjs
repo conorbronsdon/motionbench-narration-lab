@@ -9,6 +9,7 @@ const html=extra=>`<!doctype html><style>body{margin:0;background:#121725;color:
 test('browser adversarial controls', {timeout:120000}, async t=>{
   const temp=await fs.mkdtemp(path.join(os.tmpdir(),'motion-lab-controls-'));
   const run=async(name,extra,inputBrief=brief)=>{const input=path.join(temp,`${name}.html`);await fs.writeFile(input,html(extra));return evaluate({html:input,brief:inputBrief,out:path.join(temp,name)});};
+  await t.test('oversize local input is rejected before launching a browser',async()=>{const input=path.join(temp,'oversize.html');await fs.writeFile(input,'x'.repeat(2_000_001));await assert.rejects(evaluate({html:input,brief,out:path.join(temp,'oversize')}),/HTML exceeds 2 MB/);});
   await t.test('clean reference passes in both formats',async()=>assert.equal((await run('clean',{})).pass,true));
   await t.test('hidden exact text cannot establish arrival',async()=>{const r=await run('hidden',{css:'#value{visibility:hidden}'});assert.equal(r.pass,false);assert.ok(r.formats.every(f=>f.reads[0].arrival===null));});
   await t.test('ancestor clips all but the first glyph',async()=>{const r=await run('clip',{css:'#value{width:15px;overflow:hidden;white-space:nowrap}'});assert.ok(r.formats.every(f=>f.failures.some(x=>x.reasons?.includes('ancestor-clip'))));});

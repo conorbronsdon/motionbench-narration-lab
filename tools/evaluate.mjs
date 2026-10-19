@@ -56,6 +56,8 @@ export async function evaluate({html, brief, out, render = false}) {
   validateBrief(brief);
   out = path.resolve(out);
   await fs.mkdir(out, {recursive: true});
+  const htmlInfo = await fs.stat(html);
+  if (!htmlInfo.isFile() || htmlInfo.size > 2_000_000) throw Error('HTML exceeds 2 MB limit or is not a regular file');
   const [htmlBytes, gsap] = await Promise.all([fs.readFile(html), fs.readFile(path.join(root, 'node_modules/gsap/dist/gsap.min.js'))]);
   if (htmlBytes.length > 2_000_000) throw Error('HTML exceeds 2 MB limit');
   const server = http.createServer((req, res) => {
