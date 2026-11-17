@@ -20,7 +20,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const USES = /^\s*(?:-\s+)?uses:\s*["']?([^\s"'#]+)["']?\s*(#.*)?$/;
 // A step written as a flow mapping: `- {uses: owner/action@v4, with: ...}`.
 const FLOW_USES = /^\s*-\s*\{[^}]*?\buses:\s*["']?([^\s"'#,}]+)/;
-const BLOCK_SCALAR = /^(\s*)(?:-\s+)?[^\s#][^:#]*:\s*[|>][-+0-9]*\s*(?:#.*)?$/;
+// The indent group includes a leading `- `, so a step's sibling keys are not read as scalar body.
+const BLOCK_SCALAR = /^(\s*(?:-\s+)?)[^\s#][^:#]*:\s*[|>][-+0-9]*\s*(?:#.*)?$/;
 const VERSION_COMMENT = /#\s*v?\d/;
 const SHA1 = '11d5960a326750d5838078e36cf38b85af677262';
 
@@ -135,6 +136,21 @@ test('MUST FIRE: a full-SHA pin without its version comment', () => {
 	assert.deepEqual(pinProblems(`      - uses: actions/checkout@${SHA1}`), [
 		`actions/checkout@${SHA1} (no '# vX.Y.Z' comment)`,
 	]);
+});
+
+test('MUST FIRE: uses: beside a step key that opens a block scalar', () => {
+	const yaml = [
+		'      - name: >-',
+		'          Check out',
+		'        uses: actions/checkout@v4',
+		'      - if: >-',
+		'          always()',
+		'        uses: owner/action@main',
+		'      - name: |',
+		'          x',
+		'        uses: actions/setup-node@v4',
+	].join('\n');
+	assert.deepEqual(pinProblems(yaml), ['actions/checkout@v4', 'owner/action@main', 'actions/setup-node@v4']);
 });
 
 test('MUST NOT FIRE: a commented full-SHA pin, a local action and a docker image pass', () => {
